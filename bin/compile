@@ -107,7 +107,7 @@ debug "show-scratch-org-url: $show_scratch_org_url"
 debug "open-path: $open_path"
 debug "data-plans: $data_plans"
 debug "package-scratch-def: $package_scratch_def"
-debug "package-version-create-options: $package-version-create-options"
+debug "package-version-create-options: $package_version_create_options"
 
 # Set path for Dev Hub auth file
 devHubAuthFile=$BUILD_DIR/$vendorDir/sfdxurl

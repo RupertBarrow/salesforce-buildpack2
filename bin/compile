@@ -107,6 +107,7 @@ debug "show-scratch-org-url: $show_scratch_org_url"
 debug "open-path: $open_path"
 debug "data-plans: $data_plans"
 debug "package-scratch-def: $package_scratch_def"
+debug "package-version-create-options: $package-version-create-options"
 
 # Set path for Dev Hub auth file
 devHubAuthFile=$BUILD_DIR/$vendorDir/sfdxurl
@@ -161,7 +162,8 @@ then
     log "Creating new package version (this may take awhile) ..."
 
     # create package version
-    CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --wait 100 --installationkeybypass --json --definitionfile \"$package_scratch_def\" | jq -r .result.SubscriberPackageVersionId"
+    #CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --wait 100 --installationkeybypass --json --definitionfile \"$package_scratch_def\" | jq -r .result.SubscriberPackageVersionId"
+    CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --installationkeybypass --json $package_version_create_options | jq -r .result.SubscriberPackageVersionId"
     debug "CMD: $CMD"
     SFDX_PACKAGE_VERSION_ID=$(eval $CMD)
     debug "SFDX_PACKAGE_VERSION_ID: $SFDX_PACKAGE_VERSION_ID"

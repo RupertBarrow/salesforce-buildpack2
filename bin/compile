@@ -162,7 +162,9 @@ then
     log "Creating new package version (this may take awhile) ..."
 
     # create package version
-    #CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --wait 100 --installationkeybypass --json --definitionfile \"$package_scratch_def\" | jq -r .result.SubscriberPackageVersionId"
+    # RBW FIXME DEBUG
+    sfdx force:package:version:create --package $SFDX_PACKAGE_ID --installationkeybypass --json $package_version_create_options
+
     CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --installationkeybypass --json $package_version_create_options | jq -r .result.SubscriberPackageVersionId"
     debug "CMD: $CMD"
     SFDX_PACKAGE_VERSION_ID=$(eval $CMD)

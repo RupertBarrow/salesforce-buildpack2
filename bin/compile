@@ -154,7 +154,7 @@ then
   then
 
     # DEBUG : display package contents
-    debuig "Directory contents :"
+    debug "Package directory contents :"
     ls -al */*/*/*/*
     
     # get package id

@@ -153,6 +153,10 @@ then
   if [ ! -f "$pkgVersionCreateScript" ];
   then
 
+    # DEBUG : display package contents
+    debuig "Directory contents :"
+    ls -al */*/*/*/*
+    
     # get package id
     CMD="sfdx force:package:list --json | jq '.result[] | select((.Name) == \"$SFDX_PACKAGE_NAME\")' | jq -r .Id"
     debug "CMD: $CMD"

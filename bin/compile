@@ -157,6 +157,9 @@ then
     debug "Package directory contents :"
     ls -al */*/*/*/*
     
+    CMD="rm -rf *unpackaged"
+    debug "CMD: $CMD"
+    
     # get package id
     CMD="sfdx force:package:list --json | jq '.result[] | select((.Name) == \"$SFDX_PACKAGE_NAME\")' | jq -r .Id"
     debug "CMD: $CMD"

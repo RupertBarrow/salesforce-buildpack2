@@ -154,11 +154,11 @@ then
   then
 
     # DEBUG : display package contents
-    debug "Package directory contents :"
-    ls -al */*/*/*/*
+    #debug "Package directory contents :"
+    #ls -al */*/*/*/*
     
-    CMD="rm -rf *unpackaged"
-    debug "CMD: $CMD"
+    #CMD="rm -rf *unpackaged"
+    #debug "CMD: $CMD"
     
     # get package id
     CMD="sfdx force:package:list --json | jq '.result[] | select((.Name) == \"$SFDX_PACKAGE_NAME\")' | jq -r .Id"

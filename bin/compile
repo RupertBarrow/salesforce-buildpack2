@@ -165,6 +165,9 @@ then
     debug "CMD: $CMD"
     SFDX_PACKAGE_VERSION_ID=$(eval $CMD)
     debug "SFDX_PACKAGE_VERSION_ID: $SFDX_PACKAGE_VERSION_ID"
+    
+    debug "### DEBUG - Is sfdx-project.json updated ?"
+    cat sfdx-project.json
 
   else
 
